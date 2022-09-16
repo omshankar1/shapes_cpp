@@ -55,15 +55,15 @@ struct Square {
 static_assert(Shape<Square>);
 
 //***********************************************************************
-// Triangle: Non conformance: No method 'area' defined
+// LineSegment: Non conformance: No method 'area' defined
 //***********************************************************************
-struct Triangle {
-  double s{};
-  explicit Triangle(double side) : s(side) {}
-  auto name() const -> std::string { return "Triangle"; }
+struct LineSegment {
+  double l{};
+  explicit LineSegment(double side) : l(side) {}
+  auto name() const -> std::string { return "LineSegment"; }
 };
 // Compile time check
-// static_assert(Shape<Triangle>);
+// static_assert(Shape<LineSegment>);
 
 auto main() -> int {
   auto c1 = Circle{1.0};
@@ -71,7 +71,7 @@ auto main() -> int {
   auto r1 = Rectangle{2.0, 3.0};
   auto r2 = Rectangle{4.0, 7.0};
   auto s1 = Square{2.5};
-  auto t1 = Triangle{2.5};
+  auto t1 = LineSegment{2.5};
   std::cout << "Area c1: " << get_area(c1) << '\n';
   std::cout << "Area r1: " << get_area(r1) << '\n';
   std::cout << "Area s1: " << get_area(s1) << '\n';

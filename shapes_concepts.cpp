@@ -1,10 +1,9 @@
+#include "shapes_concepts.hpp"
 #include <concepts>
 #include <iostream>
 #include <numbers>
 #include <tuple>
 #include <vector>
-
-// make all && ./shapes_concepts
 
 // type SHAPE must have a member class method 'area' with signature below
 template <typename SHAPE_TYPE>
@@ -14,56 +13,15 @@ concept Shape = requires(SHAPE_TYPE shape) {
   // requires std::same_as<double, decltype(shape.area())>;
 };
 
-// Polymorphic function to get area of any "Shape" type thats passed
-template <Shape T> auto get_area(T shape) -> double { return shape.area(); };
-
-//***********************************************************************
-// Circle
-//***********************************************************************
-struct Circle {
-  double r{};
-  explicit Circle(double radius) : r(radius) {}
-  auto name() const -> std::string { return "Circle"; }
-  auto area() const -> double { return std::numbers::pi * r * r; }
-};
 // Compile time check: Circle conforms to Shape concept
 // static_assert forces conformity check at compile time
 static_assert(Shape<Circle>);
-
-//***********************************************************************
-// Rectangle
-//***********************************************************************
-struct Rectangle {
-  double w{}, h{};
-  explicit Rectangle(double width, double height) : w(width), h(height) {}
-  auto name() const -> std::string { return "Rectangle"; }
-  auto area() const -> double { return w * h; }
-};
-// Compile time check
 static_assert(Shape<Rectangle>);
-
-//***********************************************************************
-// Square
-//***********************************************************************
-struct Square {
-  double s{};
-  explicit Square(double side) : s(side) {}
-  auto name() const -> std::string { return "Rectangle"; }
-  auto area() const -> double { return s * s; }
-};
-// Compile time check
 static_assert(Shape<Square>);
-
-//***********************************************************************
-// LineSegment: Non conformance: No method 'area' defined
-//***********************************************************************
-struct LineSegment {
-  double l{};
-  explicit LineSegment(double side) : l(side) {}
-  auto name() const -> std::string { return "LineSegment"; }
-};
-// Compile time check
 // static_assert(Shape<LineSegment>);
+
+// Polymorphic function to get area of any "Shape" type thats passed
+template <Shape T> auto get_area(T shape) -> double { return shape.area(); };
 
 auto main() -> int {
   auto c1 = Circle{1.0};

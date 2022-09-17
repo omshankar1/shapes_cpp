@@ -1,17 +1,9 @@
+#include "shapes_dyn.hpp"
 #include <concepts>
 #include <iostream>
 #include <numbers>
 #include <tuple>
 #include <vector>
-
-//  make all && ./shapes_dyn
-//*************************************************************
-// Way of inheritance
-struct DynShape {
-  // virtual double area() const { return 10; }
-  virtual double area() const { return 10; }
-};
-//*************************************************************
 
 // Polymorphic function that can take any object that is
 // subclass of DynShape
@@ -26,31 +18,6 @@ double get_area(std::unique_ptr<DynShape> shape) {
             << "\t";
   return shape->area();
 };
-
-//*************************************************************
-struct Circle : public DynShape {
-  double r;
-  explicit Circle(double radius) : r(radius) {}
-  auto name() const -> std::string { return "Circle"; }
-  double area() const override { return std::numbers::pi * r * r; }
-};
-
-//*************************************************************
-struct Rectangle : public DynShape {
-  double w, h;
-  explicit Rectangle(double width, double height) : w(width), h(height) {}
-  auto name() const -> std::string { return "Rectangle"; }
-  double area() const override { return w * h; }
-};
-//*************************************************************
-
-struct Square : public DynShape {
-  double s;
-  explicit Square(double side) : s(side) {}
-  auto name() const -> std::string { return "Rectangle"; }
-  double area() const override { return s * s; }
-};
-//*************************************************************
 
 auto main() -> int {
 

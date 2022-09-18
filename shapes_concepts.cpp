@@ -29,12 +29,12 @@ auto main() -> int {
   auto r1 = Rectangle{2.0, 3.0};
   auto r2 = Rectangle{4.0, 7.0};
   auto s1 = Square{2.5};
-  auto t1 = LineSegment{2.5};
+  auto l1 = LineSegment{2.5};
   std::cout << "Area c1: " << get_area(c1) << '\n';
   std::cout << "Area r1: " << get_area(r1) << '\n';
   std::cout << "Area s1: " << get_area(s1) << '\n';
   // compile time check for non conformance
-  // std::cout << "Area t1: " << get_area(t1) << '\n';
+  // std::cout << "Area l1: " << get_area(l1) << '\n';
   std::vector<Circle> circles = std::vector<Circle>{c1, c2};
 
   for (auto shape : circles) {

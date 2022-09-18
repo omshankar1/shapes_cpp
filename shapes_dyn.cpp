@@ -8,7 +8,7 @@
 // Polymorphic function that can take any object that is
 // subclass of DynShape
 double get_area(DynShape *shape) {
-  std::cout << "get_area raw ptr"
+  std::cout << "get_area "
             << "\t";
   return shape->area();
 };
@@ -26,6 +26,9 @@ auto main() -> int {
   DynShape *r1 = new Rectangle{2.0, 3.0};
   DynShape *s1 = new Square{2.5};
   std::cout << "c1: " << get_area(c1) << '\n';
+  // c1 points to a Rectangle instance
+  c1 = new Rectangle{2.0, 3.0};
+  std::cout << "new c1: " << get_area(c1) << '\n';
   std::cout << "r1: " << get_area(r1) << '\n';
   std::cout << "s1: " << get_area(s1) << '\n';
   //*************************************************************

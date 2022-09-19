@@ -5,8 +5,8 @@
 //*************************************************************
 // Base virtual class
 struct DynShape {
-  // virtual double area() const { return 10; }
-  virtual double area() const { return 10; }
+  // virtual double area() const { return 1.0; }
+  virtual double area() const { return 1.0; }
 };
 
 //***********************************************************************

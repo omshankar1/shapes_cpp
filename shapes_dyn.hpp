@@ -2,6 +2,8 @@
 #include <numbers>
 #include <vector>
 
+//  make clean && make all && ./shapes_dyn
+
 //*************************************************************
 // Base virtual class
 // virtual

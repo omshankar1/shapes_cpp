@@ -29,7 +29,7 @@ struct DynShape {
 //***********************************************************************
 
 //***********************************************************************
-// Circle
+// 1. Circle
 //***********************************************************************
 struct Circle : public DynShape {
   double r;
@@ -39,7 +39,7 @@ struct Circle : public DynShape {
 };
 
 //***********************************************************************
-// Rectangle
+// 2. Rectangle
 //***********************************************************************
 struct Rectangle : public DynShape {
   double w, h;
@@ -49,7 +49,7 @@ struct Rectangle : public DynShape {
 };
 
 //***********************************************************************
-// Square
+// 3. Square
 //***********************************************************************
 
 struct Square : public DynShape {
@@ -60,7 +60,7 @@ struct Square : public DynShape {
 };
 
 //***********************************************************************
-// LineSegment: Non conformance: No method 'area' defined
+// 4. LineSegment: Non conformance: No method 'area' defined
 //***********************************************************************
 struct LineSegment {
   double l{};

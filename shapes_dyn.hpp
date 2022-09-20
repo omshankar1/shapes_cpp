@@ -4,8 +4,11 @@
 
 //*************************************************************
 // Base virtual class
+// virtual
+//   - Late binding
+//   - embeds vtable
 struct DynShape {
-  // virtual double area() const { return 1.0; }
+  // double area() const { return -1.0; }
   virtual double area() const { return 1.0; }
 };
 

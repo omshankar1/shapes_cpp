@@ -9,6 +9,7 @@
 //   2. Struct definition
 //   3. Struct conformance to Interface
 //   4. Polymorphic function that takes a generic interface input
+//   5. Possibility of creating a list of interface instances
 
 //*************************************************************
 // Base virtual class

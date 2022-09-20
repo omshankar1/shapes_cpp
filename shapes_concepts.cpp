@@ -22,6 +22,8 @@ template <Shape T> auto get_area(T shape) -> double { return shape.area(); };
 static_assert(Shape<Circle>);
 static_assert(Shape<Rectangle>);
 static_assert(Shape<Square>);
+
+// compile time check for non conformance
 // static_assert(Shape<LineSegment>);
 
 auto main() -> int {

@@ -21,14 +21,14 @@ double get_area(std::unique_ptr<DynShape> shape) {
 
 auto main() -> int {
 
-  // Assign Circle concrete instance to base pointer
+  // Assign Circle concrete instance to base DynShape pointer
   DynShape *c1 = new Circle{1.0}; // 'new' considered harmful!
   DynShape *r1 = new Rectangle{2.0, 3.0};
   DynShape *s1 = new Square{2.5};
   std::cout << "c1: " << get_area(c1) << '\n';
-  // c1 points to a Rectangle instance
+  // Reassiging c1 to point to a Rectangle instance
   c1 = new Rectangle{2.0, 3.0};
-  std::cout << "new c1: " << get_area(c1) << '\n';
+  std::cout << "Reassigned c1: " << get_area(c1) << '\n';
   std::cout << "r1: " << get_area(r1) << '\n';
   std::cout << "s1: " << get_area(s1) << '\n';
   //*************************************************************

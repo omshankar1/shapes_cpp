@@ -4,6 +4,12 @@
 
 //  make clean && make all && ./shapes_dyn
 
+// Pattern:
+//   1. Interface definition
+//   2. Struct definition
+//   3. Struct conformance to Interface
+//   4. Polymorphic function that takes a generic interface input
+
 //*************************************************************
 // Base virtual class
 // virtual

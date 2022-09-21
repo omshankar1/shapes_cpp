@@ -12,9 +12,9 @@
 // Base virtual class
 struct DynShape {
   // double area() const { return -1.0; }
-  virtual double area() const { return 1.0; }
   //   - Late binding
   //   - embeds vtable
+  virtual double area() const { return 1.0; }
 };
 
 //***********************************************************************

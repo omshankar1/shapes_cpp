@@ -4,24 +4,17 @@
 
 //  make clean && make all && ./shapes_dyn
 
-// Pattern:
-//   1. Interface definition
-//   2. Struct definition
-//   3. Struct conformance to Interface
-//   4. Polymorphic function that takes a generic interface input
-//   5. Possibility of creating a list of interface instances
+//*************************************************************
+// Run time Polymorphism
+//*************************************************************
 
 //*************************************************************
 // Base virtual class
-//*************************************************************
-
-//*************************************************************
-// virtual
-//   - Late binding
-//   - embeds vtable
 struct DynShape {
   // double area() const { return -1.0; }
   virtual double area() const { return 1.0; }
+  //   - Late binding
+  //   - embeds vtable
 };
 
 //***********************************************************************
@@ -34,8 +27,8 @@ struct DynShape {
 struct Circle : public DynShape {
   double r;
   explicit Circle(double radius) : r(radius) {}
-  auto name() const -> std::string { return std::string{"Circle"}; }
   double area() const override { return std::numbers::pi * r * r; }
+  auto name() const -> std::string { return std::string{"Circle"}; }
 };
 
 //***********************************************************************
@@ -44,8 +37,8 @@ struct Circle : public DynShape {
 struct Rectangle : public DynShape {
   double w, h;
   explicit Rectangle(double width, double height) : w(width), h(height) {}
-  auto name() const -> std::string { return std::string{"Rectangle"}; }
   double area() const override { return w * h; }
+  auto name() const -> std::string { return std::string{"Rectangle"}; }
 };
 
 //***********************************************************************
@@ -55,8 +48,8 @@ struct Rectangle : public DynShape {
 struct Square : public DynShape {
   double s;
   explicit Square(double side) : s(side) {}
-  auto name() const -> std::string { return std::string{"Rectangle"}; }
   double area() const override { return s * s; }
+  auto name() const -> std::string { return std::string{"Rectangle"}; }
 };
 
 //***********************************************************************

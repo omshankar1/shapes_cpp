@@ -13,7 +13,7 @@ concept Shape = requires(SHAPE_TYPE shape) {
   { shape.area() } -> std::same_as<double>;
 };
 
-// Polymorphic function to get area of any "Shape" type thats passed
+// Polymorphic function to get area of any T that conforms to "Shape"
 template <Shape T> auto get_area(T shape) -> double { return shape.area(); };
 //*************************************************************
 
